@@ -1,0 +1,223 @@
+/*
+Student Name: Chloe Damchuk
+File name: Microwave About CSS Page
+Date: October 17, 2024
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Style for navigation area */
+nav {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: center; 
+    padding: 1%;
+    margin: 1%;
+    background-color: #4da4eb;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: right;
+}
+
+.nav a {
+    color: #4da4eb;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+nav li {
+    display: inline-block; 
+    font-size: 1em;
+}
+
+nav li a {
+    padding: 0.5em 1em;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: white;
+    background-color: #1e69b5;
+    transform: scale(1.3);
+}
+
+/* Style rules for body and images */
+body {
+    font-family: "Times New Roman", Times, Serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style rules for header */
+header {
+    background-color: #4da4eb;
+    padding: 20px 5px;
+    text-shadow: auto;
+    position: center;
+}
+
+/* Header Title */
+header h1 {
+    margin: 10px 5px;
+    font-size: 2.5em;
+    font-family: "Times New Roman", Times, Serif;
+    text-align: center;
+    float: center;
+    background-color: #4da4eb;
+    padding: 20px 10px;
+    color: white;
+}
+
+header p {
+    text-align: center;
+}
+
+/* Style rules for main content */
+main {
+    display: block;
+    border-radius: auto;
+    background-color: #fff;
+    padding: 2%;
+    font-size: 1.15em;
+    font-family: "Times New Roman", Times, Serif;
+    text-shadow: auto;
+    overflow: auto;
+    width: 100%;
+}
+
+#installation, #Heating {
+    margin: 0 2%;
+}
+
+/* Style rules for footer content */
+footer {
+    background-color: #4da4eb;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 630px), print {
+    /* Tablet Viewport: Style for navigation area */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Tablet Viewport: Style rules for body and images */
+    body {
+        font-family: "Times New Roman", Times, Serif;
+        background-color: #f0f8ff;
+        margin: auto;
+        padding: 2;
+    }
+
+    /* Tablet Viewport: Style rules for header */
+    header {
+        background-color: #4da4eb;
+        padding: 20px 5px;
+        text-shadow: auto;
+        position: center;
+        color: white;
+    }
+
+    /* Tablet Viewport: Logo Image */
+    .header img {
+        max-width: 100px;
+        height: auto;
+        top: 20px;
+        left: 20px; 
+        background-color: #4da4eb;
+    }
+
+    /* Tablet Viewport: Header Title */
+    .header h1 {
+        margin: 10px 5px;
+        font-size: 2.5em;
+        font-family: "Times New Roman", Times, Serif;
+        text-align: center;
+        float: center;
+        background-color: #4da4eb;
+        padding: 20px 10px;
+        color: white;
+    }
+
+    .header p {
+        text-align: center;
+    }
+
+    .hero img {
+        width: 600;
+        height: 300;
+    }
+
+    /* Tablet Viewport: Footer */
+    .footer {
+        text-align: center;
+        font-size: 0.9em;
+    }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 769px), print {
+
+    .header h1 {
+        color: white;
+    }
+
+    /* Desktop Viewport: Style rules for main content */
+    #info ul {
+        margin-left: 5%;
+    }
+
+    main h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    #about p, ul {
+        background-color:#4da4eb;
+        color: white;
+    }
+
+    #installation, #Heating {
+        text-align: center;
+        width: 29%;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+
+    #installation {
+        float: left;
+    }
+
+    #Heating {
+        float: right;
+    }
+
+    body {
+        background-color: #4da4eb;
+        color: black;
+        padding: auto;
+    }
+}

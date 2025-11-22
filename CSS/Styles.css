@@ -1,0 +1,149 @@
+/*
+Student Name: Chloe Damchuk
+File name: Microwave Index, Specials and Media CSS Page
+Date: October 17, 2024
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Style for navigation area */
+nav {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: center; 
+    padding: 1%;
+    margin: 1%;
+    background-color: #4da4eb;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: right;
+}
+
+.nav a {
+    color: #4da4eb;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+nav li {
+    display: inline-block; 
+    font-size: 1em;
+}
+
+nav li a {
+    padding: 0.5em 1em;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: white;
+    background-color: #1e69b5;
+    transform: scale(1.3);
+}
+
+/* Style rules for body and images */
+body {
+    font-family: "Times New Roman", Times, Serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style rules for header */
+header {
+    background-color: #4da4eb;
+    padding: 20px 5px;
+    text-shadow: auto;
+    position: center;
+    color: white;
+}
+
+/* Header Title */
+header h1 {
+    margin: 10px 5px;
+    font-size: 2.5em;
+    font-family: "Times New Roman", Times, Serif;
+    text-align: center;
+    float: center;
+    background-color: #4da4eb;
+    padding: 20px 10px;
+    color: white;
+}
+
+header p {
+    text-align: center;
+}
+
+/* Section for content */
+.section h2 {
+    text-align: center;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style rules for reasonings on specials page */
+.reason {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.reason img {
+    max-width: 150px;
+    margin-right: 20px;
+}
+
+.reason h3 {
+    color: #4da4eb;
+    font-family: "Times New Roman", Times, Serif;
+    margin-bottom: 10px;
+}
+
+.reason p {
+    color: black;
+}
+
+/* Style rules for main content */
+main {
+    display: block;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 2%;
+    font-size: 1.15em;
+    font-family: "Times New Roman", Times, Serif;
+    text-shadow: auto;
+}
+
+p, h2 {
+    text-align: center;
+}
+
+/* Style rules for footer content */
+footer {
+    background-color: #4da4eb;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
+

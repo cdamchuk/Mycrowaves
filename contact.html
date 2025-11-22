@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--This website template was created by: Chloe Damchuk-->
+<html lang="en">
+	<head>
+		<title>Contact</title>
+		<meta charset="utf-8">
+    	<link rel="stylesheet" href="css/contact.css">
+		<link rel="shortcut icon" href="images/favicon.jfif">
+    	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.jfif">
+	</head>
+	
+	<body>
+
+		<div id="container">
+		
+			<!--Use the header area for the website name or logo-->
+			<header>
+				<h1>&#9733; My Mycrowaves &#9733;</h1>
+				<a href="index.html"><img src="images/cartoon.microwave.jfif" alt="cartoon microwave" height="200" width="297"></a>
+		
+			<!--Use the nav area to add hyperlinks to other pages within the website-->
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a>&nbsp;&nbsp;</li>
+					<li><a href="about.html">About Us</a>&nbsp;&nbsp;</li>
+					<li><a href="teams.html">Our Team</a>&nbsp;&nbsp;</li>
+					<li><a href="specials.html">Special</a>&nbsp;&nbsp;</li>
+					<li><a href="training.html">Training</a>&nbsp;&nbsp;</li>
+					<li><a href="media.html">Media</a>&nbsp;&nbsp;</li>
+					<li><a href="faqs.html">FAQs</a>&nbsp;&nbsp;</li>
+					<li><a href="contact.html">Contact Us</a>&nbsp;&nbsp;</li>
+				</ul>
+			</nav>
+			</header>
+	
+			<!---Hero Image-->
+			<div id="hero">
+				<img src="images/banner.image.jfif" alt="Microwaves side by side" height="600" width="1900">
+			</div>
+					
+			<!--Use the main area to add the main content of the webpage-->
+			<main>
+
+				<div id="contact">
+
+					<h2>Ready to find a microwave built for your every need? Contact us today.</h2>
+					<h4 class="tablet-desktop tel-num">(844) 332-5464</h4>
+					<h4>Email us:<a href="mailto:info@MyMycrowaves.com" class="contact-email-link">info@MyMycrowaves.com</a></h4>
+					<h4>Visit us at: Brazeau County, Alberta</h4>
+				
+				<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1227053.7322569827!2d-117.3557584540811!3d53.08165030386464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x539e466ebfff1fef%3A0xd127fcb401ce0d38!2sBrazeau%20County%2C%20AB!5e0!3m2!1sen!2sca!4v1732917116729!5m2!1sen!2sca" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+
+				<div id="form">
+
+					<h2>Complete the form below to start building your dream kitchen.</h2>
+
+					<form><!--Start Form --> 
+
+						<fieldset>
+							<legend>Customer Information</legend>
+							<label for="fName">First Name:</label>
+							<input type="text" id="fName" name="fName" required>
+
+							<label for="lName">Last Name:</label>
+							<input type="text" name="lName" id="lName" required>
+
+							<label for="email">Email:</label>
+							<input type="email" name="email" id="email" required>
+
+							<label for="phone">Phone:</label>
+							<input type="tel" id="phone" name="phone" required>
+
+							<label for="date">Todays Date:</label>
+    						<input type="date" id="date" name="date" required>
+						</fieldset>
+
+						<fieldset>
+                            <legend>Additional Information</legend>
+                            <p>I would like more information about:</p>
+                          
+                            <label for="microwaveFeatures">
+                              <input type="checkbox" name="interest" id="microwaveFeatures" value="Microwave Features"> Microwave Features
+                            </label>
+                          
+                            <label for="energyEfficiency">
+                              <input type="checkbox" name="interest" id="energyEfficiency" value="Energy Efficiency"> Energy Efficiency
+                            </label>
+                          
+                            <label for="smartTechnology">
+                              <input type="checkbox" name="interest" id="smartTechnology" value="Smart Technology"> Smart Technology
+                            </label>
+                          
+                            <label for="microwaveTypes">
+                              <input type="checkbox" name="interest" id="microwaveTypes" value="Microwave Types"> Types of Microwaves
+                            </label>
+                          
+                            <label for="microwaveRepair">
+                              <input type="checkbox" name="interest" id="microwaveRepair" value="Microwave Repair"> Microwave Repair Services
+                            </label>
+                        </fieldset>                          
+
+						<fieldset>
+							<legend>Referral Source</legend>
+							<label for="reference">How did you find us?</label>
+							<select name="reference" id="reference">
+								<option value="ad">Advertisement</option>
+								<option value="friend">Friend</option>
+								<option value="google">Google</option>
+								<option value="social">Social Media</option>
+								<option value="other">Other</option>
+							</select>
+
+							<label for="questions">Questions?</label>
+							<textarea id="questions" name="questions" rows="5" cols="35"></textarea>
+						
+						</fieldset>
+
+						<input type="submit" id="submit" value="Submit" class="btn">
+						<input type="reset" value="Reset" class="btn reset-btn">
+
+
+					</form>
+
+				</div>
+
+			</main>
+			
+			<!--Use the footer area to add webpage footer content-->
+			<footer>
+				<p>&copy; Copyright 2099. All Rights Reserved.<br><a href="mailto:info@mymicrowaves.com">Request Information</a><br>Chloe Damchuk&nbsp; &nbsp; C0953253</p>
+			</footer>
+
+		</div>
+
+		<script src="scripts/script.js"></script>
+		
+	</body>
+</html>
