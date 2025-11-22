@@ -55,13 +55,22 @@ app.post('/login', async (req, res) => {
     if (match) {
       req.session.loggedIn = true;
       req.session.user = user.username; // Track the logged-in user
-      res.redirect('/dashboard');
+      res.redirect('/index.html'); // Redirects to index (home)page
     } else {
       res.send('Invalid username or password. <a href="/login.html">Try again</a>');
     }
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
+  }
+});
+
+// Check if logged in
+app.get('/session', (req, res) => {
+  if (req.session.loggedIn) {
+    res.json({ loggedIn: true, username: req.session.username });
+  } else {
+    res.json({ loggedIn: false });
   }
 });
 
@@ -94,7 +103,7 @@ app.post('/register', async (req, res) => {
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
     users.push({ username, email, password: hashedPassword });
-    res.send('Registration successful! <a href="/login.html">Login here</a>');
+    res.direct('/login.html'); // Redirecting to log in page
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
