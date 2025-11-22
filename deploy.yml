@@ -30,9 +30,9 @@ jobs:
     - name: Deploy to Azure VM via SSH
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.AZURE_HOST }}
-        username: ${{ secrets.AZURE_USER }}
-        key: ${{ secrets.AZURE_SSH_KEY }}
+        host: 20.55.243.228 
+        username: deploy
+        key: ${{ secrets.AZURE_VM_DEPLOY_KEY }}
         port: 22
         script: |
           cd /home/deploy/Mycrowaves   # VM path
