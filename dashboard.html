@@ -1,0 +1,27 @@
+<!-- Only logged-in users can view this page because of authMiddleware in app.js
+users can logout uing the link, which terminates the session -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Mycrowaves</title>
+  <link rel="stylesheet" href="CSS/Styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Dashboard</h1>
+    <a href="/logout">Logout</a>
+  </header>
+
+  <main>
+    <p>Hello, you are logged in!</p>
+    <p>This page is protected — you must log in to access it.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mycrowaves</p>
+  </footer>
+</body>
+</html>
