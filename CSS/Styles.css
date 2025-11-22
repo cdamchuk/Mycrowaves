@@ -154,6 +154,48 @@ p, h2 {
     text-align: center;
 }
 
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 2px solid #4da4eb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #4da4eb;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4da4eb;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4da4eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #1e69b5;
+}
+
 /* Style rules for footer content */
 footer {
     background-color: #4da4eb;
