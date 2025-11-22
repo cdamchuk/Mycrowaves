@@ -1,18 +1,18 @@
 // Initial app.js page to protect dashboard with a session-based login
 
-const bcrypt = require('bcrypt'); // Hashing 
+const bcrypt = require('bcrypt'); // Hashing
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = 5002; // The port it's open on
+const PORT = 5002; // The port the app is running on
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
-  secret: 'mysecretkey', // change this for your project
+  secret: 'mysecretkey', // Change for project
   resave: false,
   saveUninitialized: true
 }));
@@ -54,6 +54,7 @@ app.post('/login', async (req, res) => {
     const match = await bcrypt.compare(password, user.password);
     if (match) {
       req.session.loggedIn = true;
+      req.session.user = user.username; // Track the logged-in user
       res.redirect('/dashboard');
     } else {
       res.send('Invalid username or password. <a href="/login.html">Try again</a>');
@@ -78,13 +79,20 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) => {
   const { username, email, password, confirmPassword } = req.body;
 
-  if(password !== confirmPassword) {
+  // Check passwords match
+  if (password !== confirmPassword) {
     return res.send('Passwords do not match. <a href="/register.html">Try again</a>');
   }
 
-  // Hash the password
+  // Check for duplicate username
+  const existingUser = users.find(u => u.username === username);
+  if (existingUser) {
+    return res.send('Username already taken. <a href="/register.html">Try again</a>');
+  }
+
   try {
-    const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
     users.push({ username, email, password: hashedPassword });
     res.send('Registration successful! <a href="/login.html">Login here</a>');
   } catch (err) {
@@ -97,3 +105,4 @@ app.post('/register', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
