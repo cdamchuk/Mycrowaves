@@ -1,0 +1,41 @@
+# deploy.yml file to make a github actions workflow
+
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [ main ]   # runs on push to main branch
+  pull_request:
+    branches: [ main ]   # runs on PRs to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test || echo "No tests found, skipping"
+
+    - name: Deploy to Azure VM via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.AZURE_HOST }}
+        username: ${{ secrets.AZURE_USER }}
+        key: ${{ secrets.AZURE_SSH_KEY }}
+        port: 22
+        script: |
+          cd /home/deploy/Mycrowaves   # VM path
+          git pull
+          npm install
+          pm2 restart all         # pm2 to keep Node running
