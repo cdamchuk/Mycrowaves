@@ -86,6 +86,9 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', async (req, res) => {
+  // DEBUG: log that the POST route was hit
+  console.log('POST /register hit');
+  console.log('Request body:', req.body); // Log form data
   const { username, email, password, confirmPassword } = req.body;
 
   // Check passwords match
