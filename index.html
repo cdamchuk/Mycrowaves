@@ -1,9 +1,10 @@
-<!DOCTYPE html>
 <!--
 	Student Name: Chloe Damchuk
 	File name: Microwave Webpage
 	Date: September 13, 2024
 -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Home</title>
@@ -35,6 +36,8 @@
 					<li><a href="faqs.html">FAQs</a>&nbsp;&nbsp;</li>
 					<li><a href="contact.html">Contact Us</a>&nbsp;&nbsp;</li>
 				</ul>
+				<!-- dynamically shows login/logout -->
+				<div id="auth-links"></div>
 			</nav>
 			</header>
 
@@ -58,6 +61,17 @@
 			</footer>
 
 		</div>
-		
+		<script>
+		fetch('/session')
+  		  .then(res => res.json())
+  		  .then(data => {
+			  const authDiv = document.getElementById('auth-links');
+    		  if (data.loggedIn) {
+				  authDiv.innerHTML = `<a href="/logout">Logout (${data.username})</a>`;
+    		  } else {
+      			  authDiv.innerHTML = `<a href="/login.html">Login</a>`;
+    	      }
+ 	 	  });
+		</script>
 	</body>
 </html>
