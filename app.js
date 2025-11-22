@@ -103,6 +103,7 @@ app.post('/register', async (req, res) => {
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
     users.push({ username, email, password: hashedPassword });
+    console.log('Registration successful. Redirecting to login...'); // debugging
     res.redirect('/login.html'); // Redirecting to log in page
   } catch (err) {
     console.error(err);
