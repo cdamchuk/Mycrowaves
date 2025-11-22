@@ -174,11 +174,15 @@ p, h2 {
 
 .login-container input[type="text"],
 .login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #4da4eb;
-    border-radius: 5px;
+    width: 90%;          /* Leaves some space on the sides */
+    padding: 10px;       /* Adds inner space so text isn’t cramped */
+    margin: 10px 0;      /* Adds vertical spacing between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;  /* Rounded edges */
+    box-sizing: border-box; /* Ensures padding doesn’t break width */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;   /* Centers the inputs in the container */
 }
 
 .login-container button {
@@ -194,6 +198,23 @@ p, h2 {
 
 .login-container button:hover {
     background-color: #1e69b5;
+}
+
+/* Sign up styling */
+.login-container .signup-text {
+    margin-top: 15px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.login-container .signup-text a {
+    color: #4da4eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container .signup-text a:hover {
+    text-decoration: underline;
 }
 
 /* Style rules for footer content */
