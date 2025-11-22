@@ -1,12 +1,13 @@
-// Initial app.js page to protect dashboard with a session based login
+// Initial app.js page to protect dashboard with a session-based login
 
+const bcrypt = require('bcrypt'); // Hashing 
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = 5002; // You can change this if you want
+const PORT = 5002; // The port it's open on
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,11 +20,8 @@ app.use(session({
 // Serve static files (CSS, images)
 app.use(express.static(path.join(__dirname)));
 
-// Dummy user for login
-const user = {
-  username: 'chloe',
-  password: 'password123' // plaintext for demo purposes
-};
+// In-memory users array
+const users = [];
 
 // Middleware to protect routes
 function authMiddleware(req, res, next) {
@@ -44,13 +42,25 @@ app.get('/dashboard', authMiddleware, (req, res) => {
 });
 
 // Login route
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  if (username === user.username && password === user.password) {
-    req.session.loggedIn = true;
-    res.redirect('/dashboard');
-  } else {
-    res.send('Invalid credentials. <a href="/login.html">Try again</a>');
+
+  const user = users.find(u => u.username === username);
+  if (!user) {
+    return res.send('Invalid username or password. <a href="/login.html">Try again</a>');
+  }
+
+  try {
+    const match = await bcrypt.compare(password, user.password);
+    if (match) {
+      req.session.loggedIn = true;
+      res.redirect('/dashboard');
+    } else {
+      res.send('Invalid username or password. <a href="/login.html">Try again</a>');
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
   }
 });
 
@@ -58,6 +68,29 @@ app.post('/login', (req, res) => {
 app.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
+});
+
+// Register routes
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'register.html'));
+});
+
+app.post('/register', async (req, res) => {
+  const { username, email, password, confirmPassword } = req.body;
+
+  if(password !== confirmPassword) {
+    return res.send('Passwords do not match. <a href="/register.html">Try again</a>');
+  }
+
+  // Hash the password
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds
+    users.push({ username, email, password: hashedPassword });
+    res.send('Registration successful! <a href="/login.html">Login here</a>');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
 });
 
 // Start server
