@@ -2,9 +2,9 @@
   "name": "mycrowaves",
   "version": "1.0.0",
   "description": "CSD-4503 DevOps group project: CI/CD pipeline demo application",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
