@@ -1,0 +1,24 @@
+{
+  "name": "mycrowaves",
+  "version": "1.0.0",
+  "description": "CSD-4503 DevOps group project: CI/CD pipeline demo application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "devops",
+    "ci-cd",
+    "azure"
+  ],
+  "author": "Chloe",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
+
